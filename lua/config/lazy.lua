@@ -20,7 +20,12 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
-    { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+    {
+      "bluz71/vim-moonfly-colors",
+      name = "moonfly",
+      lazy = false,
+      priority = 1000,
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
