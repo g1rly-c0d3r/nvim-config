@@ -4,3 +4,4 @@
 --
 vim.opt.foldmethod = "indent"
 vim.g.moonflyTransparent = true
+vim.opt.wrap = true
