@@ -5,3 +5,8 @@
 vim.opt.foldmethod = "indent"
 vim.g.moonflyTransparent = true
 vim.opt.wrap = true
+vim.opt.relativenumber = false
+vim.o.tabstop = 4
+vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
