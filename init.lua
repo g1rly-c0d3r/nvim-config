@@ -15,6 +15,7 @@ vim.pack.add({
 	'https://github.com/hrsh7th/nvim-cmp.git',
 	'https://github.com/hrsh7th/cmp-nvim-lsp.git',
 	'https://github.com/neovim/nvim-lspconfig.git',
+	'https://github.com/hrsh7th/cmp-path.git',
 })
 
 -- colorscheme
@@ -49,6 +50,28 @@ sources = cmp.config.sources({
   { name = 'buffer' },
 })
 })
+
+-- cmp path completion
+require'cmp'.setup {
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        {
+        name = 'path',
+        option = {
+            pathMappings = {
+                ['@'] = '${folder}/src',
+                -- ['/'] = '${folder}/src/public/',
+                -- ['~@'] = '${folder}/src',
+                -- ['/images'] = '${folder}/src/images',
+                -- ['/components'] = '${folder}/src/components',
+            },
+        },
+        },
+        { name = 'buffer' },
+        { name = 'luasnip' },
+    }),
+}
+
 
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
 -- Set configuration for specific filetype.
