@@ -1,11 +1,14 @@
 -- general options
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
-vim.opt.wrap = true
+-- TODO: find a way to get this to change based on file ext
+-- so it will wrap for .typ and .tex files, but nothing else.
+vim.opt.wrap = false
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 vim.opt.swapfile = false
 
@@ -134,4 +137,5 @@ cmd = {
 '--use_signature_help'
 }
 }
+
 
