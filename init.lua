@@ -13,7 +13,7 @@ vim.opt.expandtab = true
 vim.opt.swapfile = false
 
 vim.pack.add({
-	'https://github.com/bluz71/vim-moonfly-colors.git',
+    'https://github.com/tinted-theming/tinted-vim.git',
 	'https://github.com/stevearc/oil.nvim.git',
 	'https://github.com/hrsh7th/nvim-cmp.git',
 	'https://github.com/hrsh7th/cmp-nvim-lsp.git',
@@ -22,8 +22,8 @@ vim.pack.add({
 })
 
 -- colorscheme
-vim.cmd [[colorscheme moonfly]]
-vim.g.moonflyTransparent = true
+vim.cmd.colorscheme 'base16-irblack'
+
 
 -- oil
 require("oil").setup()
