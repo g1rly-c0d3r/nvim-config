@@ -13,17 +13,17 @@ vim.opt.expandtab = true
 vim.opt.swapfile = false
 
 vim.pack.add({
-    'https://github.com/tinted-theming/tinted-vim.git',
+    'https://github.com/tiagovla/tokyodark.nvim.git',
 	'https://github.com/stevearc/oil.nvim.git',
 	'https://github.com/hrsh7th/nvim-cmp.git',
 	'https://github.com/hrsh7th/cmp-nvim-lsp.git',
 	'https://github.com/neovim/nvim-lspconfig.git',
 	'https://github.com/hrsh7th/cmp-path.git',
+    'https://github.com/fortran-lang/fortls.git',
 })
 
 -- colorscheme
-vim.cmd.colorscheme 'base16-irblack'
-
+vim.cmd.colorscheme 'tokyodark'
 
 -- oil
 require("oil").setup()
@@ -109,33 +109,31 @@ matching = { disallow_symbol_nonprefix_matching = false }
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['rust_analyzer'].setup {
-capabilities = capabilities
+vim.lsp.config('clangd', {
+    cmd = {'clangd'},
+    capabilities = capabilities,
 }
-require('lspconfig')['clangd'].setup {
-capabilities = capabilities
-}
-require('lspconfig')['bashls'].setup {
-capabilities = capabilities
-}
-require('lspconfig')['tinymist'].setup {
-capabilities = capabilities
-}
-require('lspconfig')['texlab'].setup {
-capabilities = capabilities
-}
-require('lspconfig')['pyright'].setup {
-capabilities = capabilities
-}
-require'lspconfig'.fortls.setup{
-capabilities = capabilities,
+)
+vim.lsp.config('bashls', { cmd={'bash-language-server', 'start'},
+    capabilities = capabilities
+})
+vim.lsp.config('pyright', {
+    cmd={'pyright'},
+    capabilities = capabilities
+})
+vim.lsp.config('fortls', {
 cmd = {
 'fortls',
 '--lowercase_intrinsics',
 '--hover_signature',
 '--hover_language=fortran',
 '--use_signature_help'
-}
-}
+},
+capabilities = capabilities,
+})
 
 
+vim.lsp.enable('clangd')
+vim.lsp.enable('bashls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('fortls')
