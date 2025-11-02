@@ -118,13 +118,14 @@ vim.lsp.config('bashls', { cmd={'bash-language-server', 'start'},
     capabilities = capabilities
 })
 vim.lsp.config('pyright', {
-    cmd={'pyright'},
+    cmd={'pyright-langserver',
+         '--stdio'
+     },
     capabilities = capabilities
 })
 vim.lsp.config('fortls', {
 cmd = {
 'fortls',
-'--lowercase_intrinsics',
 '--hover_signature',
 '--hover_language=fortran',
 '--use_signature_help'
@@ -132,8 +133,20 @@ cmd = {
 capabilities = capabilities,
 })
 
+vim.lsp.config('hls', {
+    cmd = { 'haskell-language-server' , 'lsp' },
+    capabilities = capabilities,
+})
+
+vim.lsp.config('texlab', {
+    cmd = { 'texlab', 'run' },
+    capabilities = capabilities,
+})
+
 
 vim.lsp.enable('clangd')
 vim.lsp.enable('bashls')
 vim.lsp.enable('pyright')
 vim.lsp.enable('fortls')
+vim.lsp.enable('hls')
+vim.lsp.enable('texlab')
