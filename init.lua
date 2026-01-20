@@ -22,6 +22,7 @@ vim.pack.add({
 	'https://github.com/hrsh7th/cmp-path.git',
     'https://github.com/fortran-lang/fortls.git',
     'https://github.com/nvim-treesitter/nvim-treesitter.git',
+    'https://github.com/latex-lsp/tree-sitter-latex.git',
 })
 
 -- colorscheme
@@ -32,7 +33,7 @@ require("oil").setup()
 
 -- treesitter setup
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "c", "haskell", "fortran", "python", "bash"  },
+  ensure_installed = { "c", "haskell", "fortran", "python", "bash", "zig", "latex" },
   sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
