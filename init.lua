@@ -20,8 +20,7 @@ vim.pack.add({
 	'https://github.com/hrsh7th/cmp-nvim-lsp.git',
 	'https://github.com/neovim/nvim-lspconfig.git',
 	'https://github.com/hrsh7th/cmp-path.git',
-    'https://github.com/fortran-lang/fortls.git',
-    'https://github.com/nvim-treesitter/nvim-tree-sitter.git',
+    'https://github.com/nvim-treesitter/nvim-treesitter.git',
 })
 
 -- colorscheme
